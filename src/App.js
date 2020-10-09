@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
+import Employees from './components/employees/Employees'
+import Infobox from './components/infobox/Infobox'
 import './App.css';
+import context from './context';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  
+  render(){
+    return (
+      <context.Provider value="light">
+        <div>
+          <Header />
+          <div className="flex">
+            <Employees />
+            <Infobox />
+          </div>
+          <Footer />
+        </div>
+      </context.Provider>
+    );
+  }
+  
 }
+
 
 export default App;
