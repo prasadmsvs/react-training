@@ -4,8 +4,10 @@ import './Header.css';
 class Header extends React.Component{
     render(){
         return(
-            <div className="header">Header</div>
-        );
+            <header className="app-header">
+                <div className="logo">Fictitious</div>
+            </header>
+        )
     }
 }
 
